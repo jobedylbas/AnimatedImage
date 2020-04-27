@@ -18,9 +18,27 @@ You can customize framerate, iterations, loop, where the loop starts and so on.
 
 ```Swift
 struct ContentView: View {
-  var imageNames: [String] 
+  var imageNames: [String] = ["img_1", "img_2"]
   var body: some View {
+  
   AnimatedImage(imageNames, interval: 0.025)
+  }
+}
+```
+
+You also can customize other properties.
+
+```Swift
+struct ContentView: View {
+  var imageNames: [String] = ["img_1", "img_2"]
+  var body: some View {
+  
+  AnimatedImage(images: imageNames,
+                templateImageName: "img_1",
+                interval: 0.025,
+                loop: true,
+                loopIndex: 0,
+                iterations: 2)
   }
 }
 ```
